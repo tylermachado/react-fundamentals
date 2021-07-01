@@ -16,11 +16,11 @@ import '../box-styles.css'
 // const mediumBox = <div style={{backgroundColor:'pink', fontStyle:'italic'}} className="box box--medium">medium pink box</div>
 // const largeBox = <div style={{backgroundColor:'orange', fontStyle:'italic'}} className="box box--large">large orange box</div>
 
-function Box({className, style, ...otherProps}) {
+function Box({size, style, ...otherProps}) {
       return (
         <div 
           style={{fontStyle: 'italic', ...style}} 
-          className={`box ${className}`}
+          className={`box box--${size}`}
           {...otherProps}
         />
       )
@@ -28,7 +28,7 @@ function Box({className, style, ...otherProps}) {
 
 function App() {
   return (
-    <Box className="box--small" style={{backgroundColor: 'lightblue'}}>
+    <Box size="small"  style={{backgroundColor: 'lightblue'}}>
       small lightblue box
     </Box>
   )
